@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>
+ <html>
+  <head>
+     <meta charset="utf-8">
+     <title>4択クイズ</title>
+
+         <script type="text/javascript">
+          var audioElem;
+
+           function PlaySound1() {
+           audioElem = new Audio();
+           audioElem.src = "1.mp3";
+           audioElem.play();
+           }
+           function StopSound1(){
+           audioElem.pause();
+           }
+         </script> 
+
+
+         <script type="text/javascript">
+          var audioElem;
+           function PlaySound2() {
+           audioElem = new Audio();
+           audioElem.src = "2.mp3";
+           audioElem.play();
+           }
+           function StopSound2(){
+           audioElem.pause();
+           }
+         </script>
+
+
+          <script type="text/javascript">
+           var audioElem;
+            function PlaySound3() {
+            audioElem = new Audio();
+            audioElem.src = "3.mp3";
+            audioElem.play();
+            }
+            function StopSound3(){
+            audioElem.pause();
+            }
+            </script>
+      </head>
+ <body>
+   <h1>英語テスト</h1>
+   <hr>
+   <span id="010"></span>
+   <h2>問題</h2>
+   <div id="text_q"></div>
+     
+   <h5>
+    <a href="javascript:void(0);" onclick="PlaySound1();""StopSound2();""StopSound3();">①音声再生</a><br/>
+
+    <a href="javascript:void(0);" onclick="PlaySound2();""StopSound1();""StopSound3();">②音声再生</a><br/>
+
+    <a href="javascript:void(0);" onclick="PlaySound3();""StopSound2();""StopSound1();">③音声再生</a><br/><br/>
+
+    <a href="javascript:void(0);" onclick="StopSound2();""StopSound1();""StopSound3();">停止    </a><br />  
+  </h5> 
+   <h2>選択</h2>
+   <div id="text_c"></div>
+   <h2>解答</h2>
+   <div id="text_a"></div>    
+   <h2>アドバイス</h2>
+   <div id="text_advice"></div>
+   <script type="text/javascript">
+     qa = new Array(); //問題と解答
+     qa[0] = ["①の音声を聞いて、問いの答えに最も適切なものを選びなさい。","techniques","machinery","sounds","instruments",4,"（聞き取り中級）①の音声を聞いて、問いの答えに最も適切なものを選びなさい。<br>[音声和訳]「何か楽器を弾きますか」 今回の問題は単語の知識の問題でした。machineryは、集合的に「機械類、機械装置」を意味します。<br>ちなみに、スポーツの場合は……Do you play any sports?「何かスポーツをやっていますか」になります。"];
+     qa[1] = ["___に入る適切な語句を選びなさい。<br>Store managers at Kaito Foods ensure that their shelves are always in ___ through regular inspections.","number","level","connection","order",4,"（空欄問題中級）Store managers at Kaito Foods ensure that their shelves are always in (order) through regular inspections.<br>選択肢には意味の異なる名詞が並んでいます。意味を取ると「Kaito　Foods会社の店舗マネージャーは定期チェックを通じて棚にあるものが常に○○になっていることを確認している」となっています。<br>（和訳）Kaito Foodsの店長は、定期的に点検を行い、棚の商品が順番になっていることを常に確認しています。"]; 
+     qa[2] = ["___に入る適切な語句を選びなさい。<br>The president's passionate speech, currently posted at www.nationalpolitico. com, ___ was written by one of his daughters.","reports ","reporter"," reported ","reportedly",4,"（空欄問題上級）The president's passionate speech, currently posted at www.nationalpolitico. com, (reportedly) was written by one of his daughters.<br><br>The speech was writtenという受動態で必要な要素が揃っているため、was writtenという動詞部分を修飾する副詞として(4)reportedlyが入ると判断。<br>reportedly「レポートによると」→「聞くところによると(=according to what people say)」という意味。副詞は割り込み上手で、様々な位置に入る。<br>和訳：大統領のスピーチが現在www.nationalpolitico.comに掲載されているのだが、聞くところによるとそのスピーチは彼の娘の1人によって書かれたものだ。"];
+     qa[3] = ["convinceの意味は？","便利な","納得させる","公開する","応援する",2,"（単語の意味初級）convince (…を)確信させる,納得させる,確信させる,説得してさせる"];
+     qa[4] = ["exhaustionの意味は？","強調する ","枯渇","託児所","楕円",2,"(単語の意味中級)exhaustion  名詞。極度の疲労（状態）完全な消耗、使い果たすこと"];
+     qa[5] = ["（②の音声を聞く）What are the speakers discussing?","A charity event","A project budget","Business seminar","A research outcome",1,"(聞き取り上級）（②の音声を聞く）What are the speakers discussing?<br>W:Would you be interested in assisting with this weekend's fundraiser? <br>M:Normally l'd help out but I'm leaving on Friday to visit some clients in Singapore.<br>W: That's too bad. <br>M: Please keep me in mind for future events, though.<br> W: It's good to know that you're interested.   We're holding another event for donors in October.<br> M: You can count me in. <br> W: Mary Stapleton, who's in charge of the organizing committee,will send you an e-mail when you return to Denver on Monday.<br>（和訳）女性:今週末に予定されている資金集めのイベントを手伝うことに関心はありますか。<br>男性:いつもならお手伝いするのですが、いくつかのクライアントを訪問するため、金曜日にシンガポールに出発することになっているのです。<br>女性:それは残念ですね。男性:でも次のこのような機会のために、私が参加したいことを覚えていてくださいね。　<br>女性:興味がおありだと知って良かったです。 10月にドナーのために他のイベントを行います。　<br>男性:私を頭数に入れてくださいね。<br>女性:なあなたが月曜にデンバーへ戻ったら活動委員会の担当であるMary Stapletonが、あなたに電子メールを送るでしょう。"];
+     qa[6] = ["___に入る適切な語句を選びなさい。<br>Among ___ recognized at the company awards ceremony were senior business analyst Natalie Obi and sales associate Peter Comeau.","who","whose","they","those",4,"（空欄問題上級）Among (those) recognized at the company awards ceremony were senior business analyst Natalie Obi and sales associate Peter Comeau. <br>（和訳）社内表彰式で認められた人々の中には、上級ビジネスアナリストの Natalie Obi と セールスアソーシエイトの Peter Comeau がいました。<br>thoseにはthose who   〜する人々という意味があります。those who are interested で興味がある人というように使えます。そして、ややこしいことにこのwhoは省略されることがありthose recognized は「those who were recognized」 が省略された形なのです。"];
+     qa[7] = ["___に入る適切な語句を選びなさい。<br>Our goal is ____ quality service to our customers.","  to provide","provide","providing","provided",1,"(空欄問題中級）Our goal is (to provide) quality service to our customers.<br>(和訳）「私たちの目標は、お客様に質の高いサービスを提供することです。」不定詞 名詞的用法 「～すること」 補語"];
+     qa[8] = ["offenderの意味は？","動画","枯渇","ソロ","犯罪者",4,"(単語の意味上級）offender 常習犯。　2.人の感情を害する人[もの], 無礼者。"];
+     qa[9] = ["③の音声を聞いて正しい和訳を選びなさい？","3月1日は金曜日で平日、晴れの日でした","3月1日は日曜日で祝日、晴れの日でした","5月1日は金曜日で平日、晴れの日でした","5月1日は木曜日で平日、晴れの日でした",2,"（聞き取り初級）（音声）③の音声を聞いて正しい和訳を選びなさい？<br>March 1st was a public holiday and sunny day on Sunday"];
+   function run(){ //randomの生成
+    for (var i = qa.length-1; i>=0; i--){
+    var rand = Math.floor(Math.random() * (i+1));
+    var temp = qa[i];
+    qa[i] = qa[rand]
+    qa[rand] = temp;
+    quiz(qa);
+    }
+   }
+    //初期設定
+    q_sel = 4; //選択肢の数
+    setReady(qa);
+    function setReady() {//初期設定
+     count = 0; //問題番号
+     ansers = new Array(); //解答記録
+     run(); //再テストの場合のランダムの生成
+     quiz(); //最初の問題 
+    }
+        function quiz() { //問題表示
+           var c, n;
+           //問題
+           document.getElementById("text_q").innerHTML = (count + 1) + "問目：" + qa[count][0];
+          
+           c ="";//選択肢
+           for (n=1;n<=q_sel;n++) {
+           c += "【<a href='javascript:anser(" + n + ")'>" + n + "：" + qa[count][n] + "</a>】";
+           }
+           document.getElementById("text_c").innerHTML = c;
+        }
+
+
+        function anser(num) { //解答表示
+          var s,z;
+          s = (count + 1) + "問目：";
+          z = (count + 1) + "問目：";
+          //答え合わせ
+           if (num == qa[count][q_sel + 1]) {
+           //正解
+            ansers[count] = "○";
+            } else {
+            ansers[count] = "×";
+           }
+            s += ansers[count] + qa[count][num];
+            z += ansers[count] + qa[count][q_sel + 2];
+            document.getElementById("text_a").innerHTML =s;
+            document.getElementById("text_advice").innerHTML =z;
+            count++;//次の問題を表示
+           if (count < qa.length) {
+               quiz();
+            } else {
+           s = "<table border='2'><caption>成績発表</caption>";
+           s += "<tr><th>問題</th>";
+           z+="<ul>";
+         for (n=0;n<qa.length;n++) {
+           s += "<th>" + (n+1) + "</th>";
+           z += "<li>"+(n + 1) + "問目：" + ansers[n]+qa[n][q_sel + 2]+"</li>";   
+         }
+          s += "</tr>";
+          z+="</ul>";
+          s += "<tr><th>成績</th>";
+               for (n=0;n<qa.length;n++) {
+                s += "<td>" + ansers[n] + "</td>";
+               }
+          s += "</tr>";
+          s += "</table>";
+          document.getElementById("text_q").innerHTML = s;
+          document.getElementById("text_advice").innerHTML = z;
+          }
+      }
+ </script>
+ </body>
+ </html>
+
